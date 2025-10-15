@@ -1,0 +1,26 @@
+seed: 42
+input_size: 160
+
+paths:
+  raw_dir:      data/raw
+  landmarks_csv: data/metadata/list_landmarks_align_celeba.csv
+  weights_dir:  data/weights
+  outputs:      outputs
+
+splits:               # must sum to 1.0
+  train:   0.55
+  val:     0.20
+  test:    0.20
+  collage: 0.05
+
+train:
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  epochs: 20
+  patience: 4
+
+infer:
+  prob_thresh: 0.55
+  margin_thresh: 0.08
+  pad_frac: 0.30
